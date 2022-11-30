@@ -29,8 +29,12 @@ const load = key => {
   }
 };
 
-const storageData = load(LOCALSTORAGE_KEY);
-if (storageData) {
-  email.value = storageData.email;
-  message.value = storageData.message;
+// const storageData = load(LOCALSTORAGE_KEY);
+// if (storageData) {
+//   email.value = storageData.email;
+//   message.value = storageData.message;
+// }
+const keys = Object.keys(objectToSave);
+for (const key of keys) {
+  form.form.elements[key].value = objectToSave[key];
 }
